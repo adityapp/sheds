@@ -11,10 +11,10 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-type sheed struct {
+type sheds struct {
 }
 
-func Init() (*sheed, error) {
+func Init() (*sheds, error) {
 	err := os.MkdirAll(configs.Get().WorkDir, 0755)
 	if err != nil {
 		logrus.Error(err)
@@ -23,10 +23,10 @@ func Init() (*sheed, error) {
 
 	fmt.Printf("\nCreated directory %+v\n", configs.Get().WorkDir)
 
-	return &sheed{}, nil
+	return &sheds{}, nil
 }
 
-func (app *sheed) Start() {
+func (app *sheds) Start() {
 	route := chi.NewRouter()
 	route.Route("/api", func(r chi.Router) {
 		r.Post("/file/upload", controllers.Upload)

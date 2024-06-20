@@ -5,6 +5,6 @@ Sheds is service that allows you to store files to your private server and acces
 - Golang
 
 ## How to run
-```
+```bash
 make run
 ```
